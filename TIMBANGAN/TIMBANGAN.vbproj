@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{21AC839F-1631-445F-911C-AF21BE639A22}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>TIMBANGAN.My.MyApplication</StartupObject>
+    <RootNamespace>TIMBANGAN</RootNamespace>
+    <AssemblyName>TIMBANGAN</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>TIMBANGAN.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>TIMBANGAN.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>timbangan_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\..\..\Desktop\rezero\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="access.Designer.vb">
+      <DependentUpon>access.vb</DependentUpon>
+    </Compile>
+    <Compile Include="access.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_category.Designer.vb">
+      <DependentUpon>add_category.vb</DependentUpon>
+    </Compile>
+    <Compile Include="add_category.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_formula.Designer.vb">
+      <DependentUpon>add_formula.vb</DependentUpon>
+    </Compile>
+    <Compile Include="add_formula.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_item.Designer.vb">
+      <DependentUpon>add_item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="add_item.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_module.Designer.vb">
+      <DependentUpon>add_module.vb</DependentUpon>
+    </Compile>
+    <Compile Include="add_module.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_product.Designer.vb">
+      <DependentUpon>add_product.vb</DependentUpon>
+    </Compile>
+    <Compile Include="add_product.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_user.Designer.vb">
+      <DependentUpon>add_user.vb</DependentUpon>
+    </Compile>
+    <Compile Include="add_user.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="add_workgroup.Designer.vb">
+      <DependentUpon>add_workgroup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="add_workgroup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="categories.Designer.vb">
+      <DependentUpon>categories.vb</DependentUpon>
+    </Compile>
+    <Compile Include="categories.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="classes\access\access_class.vb" />
+    <Compile Include="classes\categories\categories_class.vb" />
+    <Compile Include="classes\connections_class.vb" />
+    <Compile Include="classes\formulas\formula_class.vb" />
+    <Compile Include="classes\items\items_class.vb" />
+    <Compile Include="classes\modules\modules_class.vb" />
+    <Compile Include="classes\products\products_class.vb" />
+    <Compile Include="classes\security_class.vb" />
+    <Compile Include="classes\steps\step1_class.vb" />
+    <Compile Include="classes\steps\step2_class.vb" />
+    <Compile Include="classes\ui_class.vb" />
+    <Compile Include="classes\users\user_class.vb" />
+    <Compile Include="classes\workgroups\workgroup_class.vb" />
+    <Compile Include="formulas.Designer.vb">
+      <DependentUpon>formulas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formulas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formula_add_item.Designer.vb">
+      <DependentUpon>formula_add_item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formula_add_item.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="import_categories.Designer.vb">
+      <DependentUpon>import_categories.vb</DependentUpon>
+    </Compile>
+    <Compile Include="import_categories.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="import_items.Designer.vb">
+      <DependentUpon>import_items.vb</DependentUpon>
+    </Compile>
+    <Compile Include="import_items.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="import_products.Designer.vb">
+      <DependentUpon>import_products.vb</DependentUpon>
+    </Compile>
+    <Compile Include="import_products.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="items.Designer.vb">
+      <DependentUpon>items.vb</DependentUpon>
+    </Compile>
+    <Compile Include="items.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.vb">
+      <DependentUpon>login.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login_logs.Designer.vb">
+      <DependentUpon>login_logs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="login_logs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.Designer.vb">
+      <DependentUpon>main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modules.Designer.vb">
+      <DependentUpon>modules.vb</DependentUpon>
+    </Compile>
+    <Compile Include="modules.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="products.Designer.vb">
+      <DependentUpon>products.vb</DependentUpon>
+    </Compile>
+    <Compile Include="products.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="step1.Designer.vb">
+      <DependentUpon>step1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="step1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="step2.Designer.vb">
+      <DependentUpon>step2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="step2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="step2_viewbatch.Designer.vb">
+      <DependentUpon>step2_viewbatch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="step2_viewbatch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="step3.Designer.vb">
+      <DependentUpon>step3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="step3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="users.Designer.vb">
+      <DependentUpon>users.vb</DependentUpon>
+    </Compile>
+    <Compile Include="users.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="workgroups.Designer.vb">
+      <DependentUpon>workgroups.vb</DependentUpon>
+    </Compile>
+    <Compile Include="workgroups.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="access.resx">
+      <DependentUpon>access.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_category.resx">
+      <DependentUpon>add_category.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_formula.resx">
+      <DependentUpon>add_formula.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_item.resx">
+      <DependentUpon>add_item.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_module.resx">
+      <DependentUpon>add_module.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_product.resx">
+      <DependentUpon>add_product.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_user.resx">
+      <DependentUpon>add_user.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="add_workgroup.resx">
+      <DependentUpon>add_workgroup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="categories.resx">
+      <DependentUpon>categories.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulas.resx">
+      <DependentUpon>formulas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formula_add_item.resx">
+      <DependentUpon>formula_add_item.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="import_categories.resx">
+      <DependentUpon>import_categories.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="import_items.resx">
+      <DependentUpon>import_items.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="import_products.resx">
+      <DependentUpon>import_products.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="items.resx">
+      <DependentUpon>items.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login_logs.resx">
+      <DependentUpon>login_logs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modules.resx">
+      <DependentUpon>modules.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="products.resx">
+      <DependentUpon>products.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="step1.resx">
+      <DependentUpon>step1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="step2.resx">
+      <DependentUpon>step2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="step2_viewbatch.resx">
+      <DependentUpon>step2_viewbatch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="step3.resx">
+      <DependentUpon>step3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="users.resx">
+      <DependentUpon>users.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="workgroups.resx">
+      <DependentUpon>workgroups.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons8_kawaii_bread.ico" />
+    <None Include="Resources\no_imagee.png" />
+    <Content Include="timbangan_icon.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+TIMBANGAN
+</name>
+</assembly>
+<members>
+<member name="T:TIMBANGAN.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:TIMBANGAN.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:TIMBANGAN.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:TIMBANGAN.My.Resources.Resources.no_image">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="M:TIMBANGAN.security_class.Encode(System.Object)">
+ <summary>
+ to encrypt data
+ </summary>
+ <param name="value"></param>
+ <returns></returns>
+</member>
+<member name="M:TIMBANGAN.security_class.Decode(System.String)">
+ <summary>
+ to decrypt data
+ </summary>
+ <param name="value"></param>
+ <returns></returns>
+</member>
+</members>
+</doc>
