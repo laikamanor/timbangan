@@ -30,22 +30,23 @@ Partial Class step3
         Me.cmbcategory = New System.Windows.Forms.ComboBox()
         Me.btnsearch = New System.Windows.Forms.Button()
         Me.txtsearch = New System.Windows.Forms.TextBox()
-        Me.category = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.product = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtactualquantity = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lbltargetquantity = New System.Windows.Forms.Label()
+        Me.txtactualtdw = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnsubmit = New System.Windows.Forms.Button()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lbltdw = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblproduct = New System.Windows.Forms.Label()
+        Me.lblcategory = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.category = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.product = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -82,7 +83,7 @@ Partial Class step3
         DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgv.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgv.ColumnHeadersHeight = 40
-        Me.dgv.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.category, Me.product})
+        Me.dgv.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.category, Me.product})
         DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -118,7 +119,6 @@ Partial Class step3
         Me.cmbcategory.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbcategory.ForeColor = System.Drawing.Color.White
         Me.cmbcategory.FormattingEnabled = True
-        Me.cmbcategory.Items.AddRange(New Object() {"All", "Breads"})
         Me.cmbcategory.Location = New System.Drawing.Point(122, 85)
         Me.cmbcategory.Name = "cmbcategory"
         Me.cmbcategory.Size = New System.Drawing.Size(121, 23)
@@ -141,40 +141,30 @@ Partial Class step3
         '
         'txtsearch
         '
+        Me.txtsearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txtsearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.txtsearch.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtsearch.Location = New System.Drawing.Point(60, 116)
         Me.txtsearch.Name = "txtsearch"
         Me.txtsearch.Size = New System.Drawing.Size(208, 26)
         Me.txtsearch.TabIndex = 42
         '
-        'category
-        '
-        Me.category.HeaderText = "Category"
-        Me.category.Name = "category"
-        Me.category.ReadOnly = True
-        '
-        'product
-        '
-        Me.product.HeaderText = "Product"
-        Me.product.Name = "product"
-        Me.product.ReadOnly = True
-        '
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtactualquantity)
         Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.Label12)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.lbltargetquantity)
+        Me.GroupBox1.Controls.Add(Me.txtactualtdw)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.btnsubmit)
-        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.lbltdw)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.lblproduct)
+        Me.GroupBox1.Controls.Add(Me.lblcategory)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -184,26 +174,45 @@ Partial Class step3
         Me.GroupBox1.Size = New System.Drawing.Size(536, 460)
         Me.GroupBox1.TabIndex = 47
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Selected Item Information"
+        Me.GroupBox1.Text = "N/A"
         '
-        'Label12
+        'txtactualquantity
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(202, 264)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(43, 22)
-        Me.Label12.TabIndex = 42
-        Me.Label12.Text = "100"
+        Me.txtactualquantity.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtactualquantity.Location = New System.Drawing.Point(206, 316)
+        Me.txtactualquantity.Name = "txtactualquantity"
+        Me.txtactualquantity.Size = New System.Drawing.Size(298, 29)
+        Me.txtactualquantity.TabIndex = 44
+        Me.txtactualquantity.Text = "0"
         '
-        'TextBox2
+        'Label7
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(206, 201)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(298, 29)
-        Me.TextBox2.TabIndex = 41
-        Me.TextBox2.Text = "2.00"
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(21, 319)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(158, 22)
+        Me.Label7.TabIndex = 43
+        Me.Label7.Text = "Actual Quantity:"
+        '
+        'lbltargetquantity
+        '
+        Me.lbltargetquantity.AutoSize = True
+        Me.lbltargetquantity.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltargetquantity.Location = New System.Drawing.Point(202, 264)
+        Me.lbltargetquantity.Name = "lbltargetquantity"
+        Me.lbltargetquantity.Size = New System.Drawing.Size(43, 22)
+        Me.lbltargetquantity.TabIndex = 42
+        Me.lbltargetquantity.Text = "100"
+        '
+        'txtactualtdw
+        '
+        Me.txtactualtdw.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtactualtdw.Location = New System.Drawing.Point(206, 201)
+        Me.txtactualtdw.Name = "txtactualtdw"
+        Me.txtactualtdw.Size = New System.Drawing.Size(298, 29)
+        Me.txtactualtdw.TabIndex = 41
+        Me.txtactualtdw.Text = "0.00"
         '
         'Label11
         '
@@ -231,15 +240,15 @@ Partial Class step3
         Me.btnsubmit.Text = "SUBMIT"
         Me.btnsubmit.UseVisualStyleBackColor = False
         '
-        'Label8
+        'lbltdw
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(202, 148)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(48, 22)
-        Me.Label8.TabIndex = 8
-        Me.Label8.Text = "1.56"
+        Me.lbltdw.AutoSize = True
+        Me.lbltdw.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltdw.Location = New System.Drawing.Point(202, 148)
+        Me.lbltdw.Name = "lbltdw"
+        Me.lbltdw.Size = New System.Drawing.Size(48, 22)
+        Me.lbltdw.TabIndex = 8
+        Me.lbltdw.Text = "0.00"
         '
         'Label10
         '
@@ -261,25 +270,25 @@ Partial Class step3
         Me.Label6.TabIndex = 4
         Me.Label6.Text = "Target Quantity:"
         '
-        'Label3
+        'lblproduct
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(202, 90)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(198, 22)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "P(1) 10 IN 1 Bigdesal"
+        Me.lblproduct.AutoSize = True
+        Me.lblproduct.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblproduct.Location = New System.Drawing.Point(202, 90)
+        Me.lblproduct.Name = "lblproduct"
+        Me.lblproduct.Size = New System.Drawing.Size(41, 22)
+        Me.lblproduct.TabIndex = 3
+        Me.lblproduct.Text = "N/A"
         '
-        'Label5
+        'lblcategory
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(202, 43)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(77, 22)
-        Me.Label5.TabIndex = 2
-        Me.Label5.Text = "Breads"
+        Me.lblcategory.AutoSize = True
+        Me.lblcategory.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblcategory.Location = New System.Drawing.Point(202, 43)
+        Me.lblcategory.Name = "lblcategory"
+        Me.lblcategory.Size = New System.Drawing.Size(41, 22)
+        Me.lblcategory.TabIndex = 2
+        Me.lblcategory.Text = "N/A"
         '
         'Label2
         '
@@ -301,24 +310,24 @@ Partial Class step3
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Category:"
         '
-        'TextBox1
+        'id
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(206, 316)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(298, 29)
-        Me.TextBox1.TabIndex = 44
-        Me.TextBox1.Text = "98"
+        Me.id.HeaderText = "ID"
+        Me.id.Name = "id"
+        Me.id.ReadOnly = True
+        Me.id.Visible = False
         '
-        'Label7
+        'category
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(21, 319)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(158, 22)
-        Me.Label7.TabIndex = 43
-        Me.Label7.Text = "Actual Quantity:"
+        Me.category.HeaderText = "Category"
+        Me.category.Name = "category"
+        Me.category.ReadOnly = True
+        '
+        'product
+        '
+        Me.product.HeaderText = "Product"
+        Me.product.Name = "product"
+        Me.product.ReadOnly = True
         '
         'step3
         '
@@ -345,24 +354,25 @@ Partial Class step3
 
     Friend WithEvents lblheader As Label
     Friend WithEvents dgv As DataGridView
-    Friend WithEvents category As DataGridViewTextBoxColumn
-    Friend WithEvents product As DataGridViewTextBoxColumn
     Friend WithEvents Label4 As Label
     Friend WithEvents cmbcategory As ComboBox
     Friend WithEvents btnsearch As Button
     Friend WithEvents txtsearch As TextBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents lbltargetquantity As Label
+    Friend WithEvents txtactualtdw As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents btnsubmit As Button
-    Friend WithEvents Label8 As Label
+    Friend WithEvents lbltdw As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lblproduct As Label
+    Friend WithEvents lblcategory As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtactualquantity As TextBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents id As DataGridViewTextBoxColumn
+    Friend WithEvents category As DataGridViewTextBoxColumn
+    Friend WithEvents product As DataGridViewTextBoxColumn
 End Class

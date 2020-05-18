@@ -22,6 +22,7 @@ Public Class step1
         dgvitems.Rows.Clear()
         dgvpalaman.Rows.Clear()
         formulaid = 0
+        GroupBox1.Text = "N/A"
     End Sub
 
     Private Sub txtsearch_KeyDown(sender As Object, e As KeyEventArgs) Handles txtsearch.KeyDown
@@ -55,6 +56,7 @@ Public Class step1
             If dt.Rows.Count <> 0 Then
                 For Each r0w As DataRow In dt.Rows
                     lblbasewt.Text = (CDbl(txtquantity.Text) / CDbl(r0w("yield"))).ToString("n2")
+                    GroupBox1.Text = r0w("formula_number")
                 Next
             Else
                 clear()
@@ -188,6 +190,10 @@ Public Class step1
         result = IIf(counter = 0, True, False)
         Return result
     End Function
+
+    Private Sub lblcategory_Click(sender As Object, e As EventArgs) Handles lblcategory.Click
+
+    End Sub
 
     Public Sub insertQuery()
         Dim dtItem As New DataTable(), dtPalaman As New DataTable()

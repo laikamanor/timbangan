@@ -123,12 +123,13 @@ Public Class step1_class
     Public Function returnFormulaNumber() As String
         Dim result As Integer = 0, totalZero As String = "", result_format As String = ""
         cc.con.Open()
-        cc.cmd = New SqlClient.SqlCommand("SELECT ISNULL(MAX(step1id),0) +1 FROM step1;", cc.con)
+        cc.cmd = New SqlClient.SqlCommand("SELECT ISNULL(MAX(step1id),0)+1 FROM step1;", cc.con)
         result = cc.cmd.ExecuteScalar
         cc.con.Close()
 
         If result < 1000000 Then
-            For temp As Integer = 0 To 6 - result
+            Dim cselectcount_result As String = CStr(result)
+            For temp As Integer = 0 To 6 - cselectcount_result.Length
                 totalZero += "0"
             Next
             result_format = "Step1 - " & totalZero & result

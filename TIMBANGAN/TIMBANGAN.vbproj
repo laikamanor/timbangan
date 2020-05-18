@@ -153,6 +153,7 @@
     <Compile Include="classes\security_class.vb" />
     <Compile Include="classes\steps\step1_class.vb" />
     <Compile Include="classes\steps\step2_class.vb" />
+    <Compile Include="classes\steps\step3_class.vb" />
     <Compile Include="classes\ui_class.vb" />
     <Compile Include="classes\users\user_class.vb" />
     <Compile Include="classes\workgroups\workgroup_class.vb" />

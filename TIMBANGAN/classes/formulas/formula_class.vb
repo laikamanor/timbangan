@@ -222,12 +222,13 @@ Public Class formula_class
     Public Function returnFormulaNumber() As String
         Dim result As Integer = 0, totalZero As String = "", result_format As String = ""
         cc.con.Open()
-        cc.cmd = New SqlClient.SqlCommand("SELECT ISNULL(MAX(formulaid),0) +1 FROM formulas;", cc.con)
+        cc.cmd = New SqlClient.SqlCommand("SELECT ISNULL(MAX(formulaid),0)+1 FROM formulas;", cc.con)
         result = cc.cmd.ExecuteScalar
         cc.con.Close()
 
         If result < 1000000 Then
-            For temp As Integer = 0 To 6 - result
+            Dim cselectcount_result As String = CStr(result)
+            For temp As Integer = 0 To 6 - cselectcount_result.Length
                 totalZero += "0"
             Next
             result_format = "Formula - " & totalZero & result
@@ -262,7 +263,7 @@ Public Class formula_class
     Public Function cellClickProducts(ByVal id As Integer) As DataTable
         Dim dt As New DataTable()
         cc.con.Open()
-        cc.cmd = New SqlClient.SqlCommand("SELECT b.product,a.price,a.tdw,a.unbaked,a.baked,a.yield,a.basewt FROM formulas a INNER JOIN products b ON a.productid = b.productid WHERE a.formulaid=" & id & ";", cc.con)
+        cc.cmd = New SqlClient.SqlCommand("SELECT b.product,a.price,a.tdw,a.unbaked,a.baked,a.yield,a.basewt,formula_number FROM formulas a INNER JOIN products b ON a.productid = b.productid WHERE a.formulaid=" & id & ";", cc.con)
         Dim adptr As New SqlClient.SqlDataAdapter()
         adptr.SelectCommand = cc.cmd
         adptr.Fill(dt)

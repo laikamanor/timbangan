@@ -24,12 +24,13 @@
             step2c.setStatus(1)
             step2c.setCategory(cmbcategory.Text)
             step2c.setProduct(txtsearch.Text)
+            step2c.setStep1ID(0)
             Dim result As New DataTable(), auto As New AutoCompleteStringCollection
             result = step2c.loadStep1()
             dgv.Rows.Clear()
             If result.Rows.Count <> 0 Then
                 For Each r0w As DataRow In result.Rows
-                    dgv.Rows.Add(r0w("category"), r0w("product"))
+                    dgv.Rows.Add(r0w("step1id"), r0w("category"), r0w("product"))
                     auto.Add(r0w("product"))
                 Next
             Else
@@ -43,8 +44,9 @@
     End Sub
     Private Sub dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellClick
         If dgv.Rows.Count <> 0 Then
-            If e.ColumnIndex = 2 Then
+            If e.ColumnIndex = 3 Then
                 Dim frm As New step2_viewbatch()
+                frm.id = dgv.CurrentRow.Cells("id").Value
                 frm.ShowDialog()
             Else
                 txtbatchquantity.Text = "1"
@@ -62,7 +64,7 @@
     Public Sub clear()
         lblcategory.Text = "N/A"
         lblproduct.Text = "N/A"
-        lblquantity.Text = "0"
+        lblquantity.Text = "0/0"
         lbltdw.Text = "0.00"
         lblpalaman.Text = "N/A"
         'txtbatchquantity.Text = "0"
@@ -70,12 +72,8 @@
         dgvpalaman.Rows.Clear()
         step1id = 0
         formulaid = 0
-    End Sub
-
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-        'MessageBox.Show(TextBox1.Text.IndexOf("/"))
-        'Dim subs As Integer = TextBox1.Text.IndexOf("/")
-        'MessageBox.Show(TextBox1.Text.Substring(subs + 1))
+        GroupBox1.Text = "N/A"
+        loadStep1()
     End Sub
     Public Function itemsValidation() As Boolean
         Dim counter As Integer = 0, result As Boolean = False
@@ -146,20 +144,24 @@
     End Sub
     Public Sub insertQuery()
         Dim dtItem As New DataTable(), dtPalaman As New DataTable()
+        dtItem.Columns.Add("step1_itemid")
+        dtItem.Columns.Add("formula_itemid")
+        dtItem.Columns.Add("itemid")
         dtItem.Columns.Add("value")
         dtItem.Columns.Add("actual")
-        dtItem.Columns.Add("itemid")
 
+        dtPalaman.Columns.Add("step1_itemid")
+        dtPalaman.Columns.Add("formula_itemid")
+        dtPalaman.Columns.Add("itemid")
         dtPalaman.Columns.Add("value")
         dtPalaman.Columns.Add("actual")
-        dtPalaman.Columns.Add("itemid")
 
         For index As Integer = 0 To dgvitems.Rows.Count - 1
-            dtItem.Rows.Add(dgvitems.Rows(index).Cells("valuee").Value, dgvitems.Rows(index).Cells("actuall").Value, dgvitems.Rows(index).Cells("formula_itemid").Value)
+            dtItem.Rows.Add(dgvitems.Rows(index).Cells("step1_id").Value, dgvitems.Rows(index).Cells("formula_itemid").Value, dgvitems.Rows(index).Cells("itemid").Value, dgvitems.Rows(index).Cells("valuee").Value, dgvitems.Rows(index).Cells("actuall").Value)
         Next
 
         For index As Integer = 0 To dgvpalaman.Rows.Count - 1
-            dtPalaman.Rows.Add(dgvpalaman.Rows(index).Cells("valueee").Value, dgvpalaman.Rows(index).Cells("actualll").Value, dgvpalaman.Rows(index).Cells("formula_itemidd").Value)
+            dtPalaman.Rows.Add(dgvpalaman.Rows(index).Cells("step1_idd").Value, dgvpalaman.Rows(index).Cells("formula_itemidd").Value, dgvpalaman.Rows(index).Cells("itemidd").Value, dgvpalaman.Rows(index).Cells("valueee").Value, dgvpalaman.Rows(index).Cells("actualll").Value)
         Next
         Dim step2num As String = step2c.returnFormulaNumber()
         step2c.setStep2Num(step2num)
@@ -172,7 +174,7 @@
     End Sub
     Private Sub dgvitems_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvitems.CellEndEdit
         If dgvitems.Rows.Count <> 0 Then
-            If e.ColumnIndex = 5 Then
+            If e.ColumnIndex = 6 Then
                 If String.IsNullOrEmpty(dgvitems.CurrentRow.Cells("actuall").Value) Then
                     MessageBox.Show("Actual is required", "Atlantic Bakery", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     dgvitems.CurrentRow.Cells("actuall").Value = "0.00"
@@ -200,9 +202,21 @@
         End If
     End Sub
 
+    Public Function returnBatches() As Integer
+        Dim result As Integer = 0, subs As Integer = 0
+        subs = lblquantity.Text.IndexOf("/")
+        result = lblquantity.Text.Substring(0, subs)
+        Return result
+    End Function
+    Public Function returnTargetQuantity() As Integer
+        Dim result As Integer = 0, subs As Integer = 0
+        subs = lblquantity.Text.IndexOf("/")
+        result = lblquantity.Text.Substring(subs + 1)
+        Return result
+    End Function
     Private Sub dgvpalaman_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvpalaman.CellEndEdit
         If dgvpalaman.Rows.Count <> 0 Then
-            If e.ColumnIndex = 5 Then
+            If e.ColumnIndex = 6 Then
                 If String.IsNullOrEmpty(dgvpalaman.CurrentRow.Cells("actualll").Value) Then
                     MessageBox.Show("Actual is required", "Atlantic Bakery", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     dgvpalaman.CurrentRow.Cells("actualll").Value = "0.00"
@@ -222,6 +236,7 @@
     End Sub
 
     Public Sub cellClick()
+        Dim answer As Integer = returnTargetQuantity() - returnBatches()
         If Not IsNumeric(txtbatchquantity.Text) Then
             MessageBox.Show("Batch Quantity must be a number", "Atlantic Bakery", MessageBoxButtons.OK, MessageBoxIcon.Error)
             txtbatchquantity.Text = "0"
@@ -230,9 +245,9 @@
             MessageBox.Show("Please input atleast 1 Batch Quantity", "Atlantic Bakery", MessageBoxButtons.OK, MessageBoxIcon.Error)
             txtbatchquantity.Text = "0"
             itemPalamanFormula()
-        ElseIf CDbl(lblquantity.Text) < CDbl(txtbatchquantity.Text) Then
-            MessageBox.Show("Remaining Quantity is " & lblquantity.Text, "Atlantic Bakery", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            txtbatchquantity.Text = lblquantity.Text
+        ElseIf answer < CDbl(txtbatchquantity.Text) And lblquantity.Text <> "0/0" Then
+            MessageBox.Show("Remaining Quantity is " & answer, "Atlantic Bakery", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            txtbatchquantity.Text = answer
             itemPalamanFormula()
         ElseIf IsNumeric(txtbatchquantity.Text) Then
             itemPalamanFormula()
@@ -241,8 +256,7 @@
 
     Public Sub itemPalamanFormula()
         step2c.setStatus(1)
-        step2c.setCategory(dgv.CurrentRow.Cells("category").Value)
-        step2c.setProduct(dgv.CurrentRow.Cells("product").Value)
+        step2c.setStep1ID(dgv.CurrentRow.Cells("id").Value)
         Dim result As New DataTable(), resultItems As New DataTable(), resultPalaman As New DataTable(), auto As New AutoCompleteStringCollection,
             viewItemsName As String = "vStep1Items",
             viewPalamanName As String = "vStep1Palaman"
@@ -251,18 +265,23 @@
             For Each r0w As DataRow In result.Rows
                 lblcategory.Text = r0w("category")
                 lblproduct.Text = r0w("product")
-                lblquantity.Text = CInt(r0w("quantity")).ToString("N0")
+                lblquantity.Text = (CInt(r0w("batch")).ToString("N0") & "/" & CInt(r0w("quantity")).ToString("N0"))
                 lbltdw.Text = CDbl(r0w("basewt")).ToString("n2")
-                step1id = r0w("step1id")
+                step1id = dgv.CurrentRow.Cells("id").Value
                 formulaid = r0w("formulaid")
+                GroupBox1.Text = r0w("step1num")
+                If r0w("category").ToString.ToLower = "Palaman".ToLower Then
+                    lblpalaman.Text = r0w("itemname")
+                End If
+
             Next
-            Dim toDivide As Double = (CDbl(txtbatchquantity.Text) / CDbl(lblquantity.Text) * 100)
+            Dim toDivide As Double = (CDbl(txtbatchquantity.Text) / CDbl(returnTargetQuantity()) * 100)
             resultItems = step2c.loadItemsPalaman(viewItemsName, step1id)
             If resultItems.Rows.Count <> 0 Then
                 dgvitems.Rows.Clear()
                 For Each r0w As DataRow In resultItems.Rows
                     Dim batchValue As Double = CDbl(r0w("value")) * (toDivide / 100)
-                    dgvitems.Rows.Add(r0w("itemid"), r0w("formula_itemid"), r0w("category"), r0w("itemname"), batchValue.ToString("n2"), "0.00")
+                    dgvitems.Rows.Add(r0w("itemid"), r0w("formula_itemid"), r0w("id"), r0w("category"), r0w("itemname"), batchValue.ToString("n2"), "0.00")
                 Next
             Else
                 dgvitems.Rows.Clear()
@@ -272,7 +291,7 @@
                 dgvpalaman.Rows.Clear()
                 For Each r0w As DataRow In resultPalaman.Rows
                     Dim batchValue As Double = CDbl(r0w("value")) * (toDivide / 100)
-                    dgvpalaman.Rows.Add(r0w("itemid"), r0w("formula_itemid"), r0w("category"), r0w("itemname"), batchValue.ToString("n2"), "0.00")
+                    dgvpalaman.Rows.Add(r0w("itemid"), r0w("formula_itemid"), r0w("id"), r0w("category"), r0w("itemname"), batchValue.ToString("n2"), "0.00")
                 Next
             Else
                 dgvpalaman.Rows.Clear()

@@ -31,6 +31,7 @@ Partial Class step2
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblheader = New System.Windows.Forms.Label()
         Me.dgv = New System.Windows.Forms.DataGridView()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.category = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.product = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnview = New System.Windows.Forms.DataGridViewButtonColumn()
@@ -39,7 +40,6 @@ Partial Class step2
         Me.btnsearch = New System.Windows.Forms.Button()
         Me.txtsearch = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.lblpalaman = New System.Windows.Forms.Label()
         Me.lblquantity = New System.Windows.Forms.Label()
         Me.txtbatchquantity = New System.Windows.Forms.TextBox()
@@ -47,6 +47,7 @@ Partial Class step2
         Me.dgvpalaman = New System.Windows.Forms.DataGridView()
         Me.itemidd = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.formula_itemidd = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.step1_idd = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.valueee = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -54,6 +55,7 @@ Partial Class step2
         Me.dgvitems = New System.Windows.Forms.DataGridView()
         Me.itemid = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.formula_itemid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.step1_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.valuee = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -106,7 +108,7 @@ Partial Class step2
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgv.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv.ColumnHeadersHeight = 40
-        Me.dgv.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.category, Me.product, Me.btnview})
+        Me.dgv.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.category, Me.product, Me.btnview})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -122,6 +124,13 @@ Partial Class step2
         Me.dgv.RowHeadersVisible = False
         Me.dgv.Size = New System.Drawing.Size(282, 397)
         Me.dgv.TabIndex = 41
+        '
+        'id
+        '
+        Me.id.HeaderText = "ID"
+        Me.id.Name = "id"
+        Me.id.ReadOnly = True
+        Me.id.Visible = False
         '
         'category
         '
@@ -205,7 +214,6 @@ Partial Class step2
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.lblpalaman)
         Me.GroupBox1.Controls.Add(Me.lblquantity)
         Me.GroupBox1.Controls.Add(Me.txtbatchquantity)
@@ -229,17 +237,7 @@ Partial Class step2
         Me.GroupBox1.Size = New System.Drawing.Size(488, 535)
         Me.GroupBox1.TabIndex = 42
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Selected Item Information"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(249, 132)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(106, 22)
-        Me.TextBox1.TabIndex = 44
-        Me.TextBox1.Text = "0"
-        Me.TextBox1.Visible = False
+        Me.GroupBox1.Text = "N/A"
         '
         'lblpalaman
         '
@@ -257,9 +255,9 @@ Partial Class step2
         Me.lblquantity.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblquantity.Location = New System.Drawing.Point(154, 100)
         Me.lblquantity.Name = "lblquantity"
-        Me.lblquantity.Size = New System.Drawing.Size(29, 16)
+        Me.lblquantity.Size = New System.Drawing.Size(26, 16)
         Me.lblquantity.TabIndex = 42
-        Me.lblquantity.Text = "100"
+        Me.lblquantity.Text = "0/0"
         '
         'txtbatchquantity
         '
@@ -268,6 +266,7 @@ Partial Class step2
         Me.txtbatchquantity.Name = "txtbatchquantity"
         Me.txtbatchquantity.Size = New System.Drawing.Size(106, 22)
         Me.txtbatchquantity.TabIndex = 41
+        Me.txtbatchquantity.Text = "0"
         '
         'Label11
         '
@@ -302,7 +301,7 @@ Partial Class step2
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvpalaman.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvpalaman.ColumnHeadersHeight = 40
-        Me.dgvpalaman.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.itemidd, Me.formula_itemidd, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.valueee, Me.actualll})
+        Me.dgvpalaman.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.itemidd, Me.formula_itemidd, Me.step1_idd, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.valueee, Me.actualll})
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -332,6 +331,13 @@ Partial Class step2
         Me.formula_itemidd.Name = "formula_itemidd"
         Me.formula_itemidd.ReadOnly = True
         Me.formula_itemidd.Visible = False
+        '
+        'step1_idd
+        '
+        Me.step1_idd.HeaderText = "Step 1 ID"
+        Me.step1_idd.Name = "step1_idd"
+        Me.step1_idd.ReadOnly = True
+        Me.step1_idd.Visible = False
         '
         'DataGridViewTextBoxColumn3
         '
@@ -378,7 +384,7 @@ Partial Class step2
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvitems.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvitems.ColumnHeadersHeight = 40
-        Me.dgvitems.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.itemid, Me.formula_itemid, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.valuee, Me.actuall})
+        Me.dgvitems.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.itemid, Me.formula_itemid, Me.step1_id, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.valuee, Me.actuall})
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle7.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -408,6 +414,13 @@ Partial Class step2
         Me.formula_itemid.Name = "formula_itemid"
         Me.formula_itemid.ReadOnly = True
         Me.formula_itemid.Visible = False
+        '
+        'step1_id
+        '
+        Me.step1_id.HeaderText = "Step1 ID"
+        Me.step1_id.Name = "step1_id"
+        Me.step1_id.ReadOnly = True
+        Me.step1_id.Visible = False
         '
         'DataGridViewTextBoxColumn1
         '
@@ -476,7 +489,7 @@ Partial Class step2
         Me.lbltdw.Name = "lbltdw"
         Me.lbltdw.Size = New System.Drawing.Size(33, 16)
         Me.lbltdw.TabIndex = 8
-        Me.lbltdw.Text = "1.56"
+        Me.lbltdw.Text = "0.00"
         '
         'Label10
         '
@@ -504,9 +517,9 @@ Partial Class step2
         Me.lblproduct.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblproduct.Location = New System.Drawing.Point(154, 71)
         Me.lblproduct.Name = "lblproduct"
-        Me.lblproduct.Size = New System.Drawing.Size(137, 16)
+        Me.lblproduct.Size = New System.Drawing.Size(30, 16)
         Me.lblproduct.TabIndex = 3
-        Me.lblproduct.Text = "P(1) 10 IN 1 Bigdesal"
+        Me.lblproduct.Text = "N/A"
         '
         'lblcategory
         '
@@ -514,9 +527,9 @@ Partial Class step2
         Me.lblcategory.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblcategory.Location = New System.Drawing.Point(154, 43)
         Me.lblcategory.Name = "lblcategory"
-        Me.lblcategory.Size = New System.Drawing.Size(52, 16)
+        Me.lblcategory.Size = New System.Drawing.Size(30, 16)
         Me.lblcategory.TabIndex = 2
-        Me.lblcategory.Text = "Breads"
+        Me.lblcategory.Text = "N/A"
         '
         'Label2
         '
@@ -587,21 +600,23 @@ Partial Class step2
     Friend WithEvents txtbatchquantity As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents lblquantity As Label
-    Friend WithEvents category As DataGridViewTextBoxColumn
-    Friend WithEvents product As DataGridViewTextBoxColumn
-    Friend WithEvents btnview As DataGridViewButtonColumn
     Friend WithEvents lblpalaman As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents itemidd As DataGridViewTextBoxColumn
-    Friend WithEvents formula_itemidd As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents valueee As DataGridViewTextBoxColumn
-    Friend WithEvents actualll As DataGridViewTextBoxColumn
     Friend WithEvents itemid As DataGridViewTextBoxColumn
     Friend WithEvents formula_itemid As DataGridViewTextBoxColumn
+    Friend WithEvents step1_id As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents valuee As DataGridViewTextBoxColumn
     Friend WithEvents actuall As DataGridViewTextBoxColumn
+    Friend WithEvents itemidd As DataGridViewTextBoxColumn
+    Friend WithEvents formula_itemidd As DataGridViewTextBoxColumn
+    Friend WithEvents step1_idd As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents valueee As DataGridViewTextBoxColumn
+    Friend WithEvents actualll As DataGridViewTextBoxColumn
+    Friend WithEvents id As DataGridViewTextBoxColumn
+    Friend WithEvents category As DataGridViewTextBoxColumn
+    Friend WithEvents product As DataGridViewTextBoxColumn
+    Friend WithEvents btnview As DataGridViewButtonColumn
 End Class

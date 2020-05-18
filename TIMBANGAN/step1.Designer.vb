@@ -22,12 +22,12 @@ Partial Class step1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtsearch = New System.Windows.Forms.TextBox()
         Me.btnsearch = New System.Windows.Forms.Button()
         Me.lblheader = New System.Windows.Forms.Label()
@@ -40,7 +40,19 @@ Partial Class step1
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.lblpalaman = New System.Windows.Forms.Label()
         Me.dgvpalaman = New System.Windows.Forms.DataGridView()
+        Me.itemidd = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.formula_itemidd = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.valueee = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.actualll = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvitems = New System.Windows.Forms.DataGridView()
+        Me.itemid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.formula_itemid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.valuee = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.actuall = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.label8 = New System.Windows.Forms.Label()
         Me.btnsubmit = New System.Windows.Forms.Button()
@@ -52,18 +64,6 @@ Partial Class step1
         Me.lblcategory = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.itemidd = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.formula_itemidd = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.valueee = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.actualll = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.itemid = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.formula_itemid = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.valuee = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.actuall = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvformulas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvpalaman, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -143,24 +143,24 @@ Partial Class step1
         Me.dgvformulas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvformulas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dgvformulas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvformulas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvformulas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvformulas.ColumnHeadersHeight = 40
         Me.dgvformulas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.formula_id, Me.category, Me.product})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvformulas.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvformulas.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgvformulas.EnableHeadersVisualStyles = False
         Me.dgvformulas.GridColor = System.Drawing.Color.White
         Me.dgvformulas.Location = New System.Drawing.Point(60, 174)
@@ -214,7 +214,7 @@ Partial Class step1
         Me.GroupBox1.Size = New System.Drawing.Size(488, 535)
         Me.GroupBox1.TabIndex = 37
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Selected Item Information"
+        Me.GroupBox1.Text = "N/A"
         '
         'lblpalaman
         '
@@ -240,24 +240,24 @@ Partial Class step1
         Me.dgvpalaman.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvpalaman.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dgvpalaman.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvpalaman.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvpalaman.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgvpalaman.ColumnHeadersHeight = 40
         Me.dgvpalaman.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.itemidd, Me.formula_itemidd, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.valueee, Me.actualll})
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvpalaman.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.DimGray
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvpalaman.DefaultCellStyle = DataGridViewCellStyle10
         Me.dgvpalaman.EnableHeadersVisualStyles = False
         Me.dgvpalaman.GridColor = System.Drawing.Color.White
         Me.dgvpalaman.Location = New System.Drawing.Point(24, 348)
@@ -265,6 +265,44 @@ Partial Class step1
         Me.dgvpalaman.RowHeadersVisible = False
         Me.dgvpalaman.Size = New System.Drawing.Size(447, 144)
         Me.dgvpalaman.TabIndex = 39
+        '
+        'itemidd
+        '
+        Me.itemidd.HeaderText = "Item ID"
+        Me.itemidd.Name = "itemidd"
+        Me.itemidd.ReadOnly = True
+        Me.itemidd.Visible = False
+        '
+        'formula_itemidd
+        '
+        Me.formula_itemidd.HeaderText = "ID"
+        Me.formula_itemidd.Name = "formula_itemidd"
+        Me.formula_itemidd.ReadOnly = True
+        Me.formula_itemidd.Visible = False
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Category"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Item"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        '
+        'valueee
+        '
+        Me.valueee.HeaderText = "Value"
+        Me.valueee.Name = "valueee"
+        Me.valueee.ReadOnly = True
+        '
+        'actualll
+        '
+        Me.actualll.HeaderText = "Actual"
+        Me.actualll.Name = "actualll"
+        Me.actualll.ReadOnly = True
         '
         'dgvitems
         '
@@ -279,24 +317,24 @@ Partial Class step1
         Me.dgvitems.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvitems.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dgvitems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvitems.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvitems.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.dgvitems.ColumnHeadersHeight = 40
         Me.dgvitems.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.itemid, Me.formula_itemid, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.valuee, Me.actuall})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.DimGray
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvitems.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.DimGray
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvitems.DefaultCellStyle = DataGridViewCellStyle12
         Me.dgvitems.EnableHeadersVisualStyles = False
         Me.dgvitems.GridColor = System.Drawing.Color.White
         Me.dgvitems.Location = New System.Drawing.Point(24, 179)
@@ -304,6 +342,43 @@ Partial Class step1
         Me.dgvitems.RowHeadersVisible = False
         Me.dgvitems.Size = New System.Drawing.Size(447, 147)
         Me.dgvitems.TabIndex = 38
+        '
+        'itemid
+        '
+        Me.itemid.HeaderText = "Item ID"
+        Me.itemid.Name = "itemid"
+        Me.itemid.ReadOnly = True
+        Me.itemid.Visible = False
+        '
+        'formula_itemid
+        '
+        Me.formula_itemid.HeaderText = "ID"
+        Me.formula_itemid.Name = "formula_itemid"
+        Me.formula_itemid.ReadOnly = True
+        Me.formula_itemid.Visible = False
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Category"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Item"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'valuee
+        '
+        Me.valuee.HeaderText = "Value"
+        Me.valuee.Name = "valuee"
+        Me.valuee.ReadOnly = True
+        '
+        'actuall
+        '
+        Me.actuall.HeaderText = "Actual"
+        Me.actuall.Name = "actuall"
         '
         'Label9
         '
@@ -419,81 +494,6 @@ Partial Class step1
         Me.Label1.Size = New System.Drawing.Size(69, 16)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Category:"
-        '
-        'itemidd
-        '
-        Me.itemidd.HeaderText = "Item ID"
-        Me.itemidd.Name = "itemidd"
-        Me.itemidd.ReadOnly = True
-        Me.itemidd.Visible = False
-        '
-        'formula_itemidd
-        '
-        Me.formula_itemidd.HeaderText = "ID"
-        Me.formula_itemidd.Name = "formula_itemidd"
-        Me.formula_itemidd.ReadOnly = True
-        Me.formula_itemidd.Visible = False
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Category"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Item"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        '
-        'valueee
-        '
-        Me.valueee.HeaderText = "Value"
-        Me.valueee.Name = "valueee"
-        Me.valueee.ReadOnly = True
-        '
-        'actualll
-        '
-        Me.actualll.HeaderText = "Actual"
-        Me.actualll.Name = "actualll"
-        Me.actualll.ReadOnly = True
-        '
-        'itemid
-        '
-        Me.itemid.HeaderText = "Item ID"
-        Me.itemid.Name = "itemid"
-        Me.itemid.ReadOnly = True
-        Me.itemid.Visible = False
-        '
-        'formula_itemid
-        '
-        Me.formula_itemid.HeaderText = "ID"
-        Me.formula_itemid.Name = "formula_itemid"
-        Me.formula_itemid.ReadOnly = True
-        Me.formula_itemid.Visible = False
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Category"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Item"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        '
-        'valuee
-        '
-        Me.valuee.HeaderText = "Value"
-        Me.valuee.Name = "valuee"
-        Me.valuee.ReadOnly = True
-        '
-        'actuall
-        '
-        Me.actuall.HeaderText = "Actual"
-        Me.actuall.Name = "actuall"
         '
         'step1
         '
