@@ -41,5 +41,39 @@ TIMBANGAN
  <param name="value"></param>
  <returns></returns>
 </member>
+<member name="M:TIMBANGAN.step3_class.loadStep2">
+ <summary>
+ get data from step2
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:TIMBANGAN.step3_class.insertStep3">
+ <summary>
+ sub to insert parameters to Step 3
+ </summary>
+</member>
+<member name="M:TIMBANGAN.step3_class.returnStep3Num">
+ <summary>
+ return step 3 transaction number for reference
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:TIMBANGAN.step3.actualTDWValidation">
+ <summary>
+ Actual TDW Validation
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:TIMBANGAN.step3.actualQuantityValidation">
+ <summary>
+ Actual Quantity Validation
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:TIMBANGAN.step3.loadStep2">
+ <summary>
+ load datagridview and get data from step3 class
+ </summary>
+</member>
 </members>
 </doc>

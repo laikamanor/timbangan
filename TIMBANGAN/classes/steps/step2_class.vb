@@ -101,7 +101,7 @@ Public Class step2_class
         Return result
     End Function
 
-    Public Function returnFormulaNumber() As String
+    Public Function returnStep2Num() As String
         Dim result As Integer = 0, totalZero As String = "", result_format As String = ""
         cc.con.Open()
         cc.cmd = New SqlClient.SqlCommand("SELECT ISNULL(MAX(step2id),0)+1 FROM step2;", cc.con)
@@ -119,7 +119,7 @@ Public Class step2_class
         Return result_format
     End Function
 
-    Public Sub insertStep1(ByVal dtItem As DataTable, ByVal dtPalaman As DataTable)
+    Public Sub insertStep2(ByVal dtItem As DataTable, ByVal dtPalaman As DataTable)
         Try
             Using connection As New SqlConnection(cc.conString)
                 Dim command As New SqlCommand()

@@ -163,14 +163,14 @@
         For index As Integer = 0 To dgvpalaman.Rows.Count - 1
             dtPalaman.Rows.Add(dgvpalaman.Rows(index).Cells("step1_idd").Value, dgvpalaman.Rows(index).Cells("formula_itemidd").Value, dgvpalaman.Rows(index).Cells("itemidd").Value, dgvpalaman.Rows(index).Cells("valueee").Value, dgvpalaman.Rows(index).Cells("actualll").Value)
         Next
-        Dim step2num As String = step2c.returnFormulaNumber()
+        Dim step2num As String = step2c.returnStep2Num()
         step2c.setStep2Num(step2num)
         step2c.setStep1ID(step1id)
         step2c.setFormulaID(formulaid)
         step2c.setProduct(lblproduct.Text)
         step2c.setQuantity(txtbatchquantity.Text)
         step2c.setStatus(1)
-        step2c.insertStep1(dtItem, dtPalaman)
+        step2c.insertStep2(dtItem, dtPalaman)
     End Sub
     Private Sub dgvitems_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvitems.CellEndEdit
         If dgvitems.Rows.Count <> 0 Then

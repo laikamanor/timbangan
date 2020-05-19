@@ -35,3 +35,4 @@ C:\Users\Dell1\Documents\Visual Studio 2019\Projects\TIMBANGAN\TIMBANGAN\obj\Deb
 C:\Users\Dell1\Documents\Visual Studio 2019\Projects\TIMBANGAN\TIMBANGAN\obj\Debug\TIMBANGAN.step2.resources
 C:\Users\Dell1\Documents\Visual Studio 2019\Projects\TIMBANGAN\TIMBANGAN\obj\Debug\TIMBANGAN.step3.resources
 C:\Users\Dell1\Documents\Visual Studio 2019\Projects\TIMBANGAN\TIMBANGAN\obj\Debug\TIMBANGAN.step2_viewbatch.resources
+C:\Users\Dell1\Documents\Visual Studio 2019\Projects\TIMBANGAN\TIMBANGAN\obj\Debug\TIMBANGAN.vbprojAssemblyReference.cache
