@@ -1,2 +1,2 @@
-#TIMBANGAN SYSEM
+#TIMBANGANSYSTEM
 This is Timbangan System
